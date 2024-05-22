@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diccionario de Antónimos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<script>
+    function clearResults() {
+        document.querySelector('textarea[name="code"]').value = "";
+        const tbodies = document.querySelectorAll("table tbody");
+        tbodies.forEach(tbody => {
+            while (tbody.firstChild) {
+                tbody.removeChild(tbody.firstChild);
+            }
+        });
+    }
+</script>
+<body>
+    <h1>Diccionario de Antónimos</h1>
+    <div class="container">
+        <form action="/analyze" method="POST">
+            <label for="code">Ingresa las palabras:</label><br>
+            <textarea name="code" id="code" rows="10" cols="50" required>{{ code if code else '' }}</textarea>
+            <br><br>
+            <button type="submit">Verificar</button>
+        </form>
+        
+        {% if results %}
+            <div class="table-container">
+                <h2>Resultados</h2>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Antónimo</th>
+                            <th>Dígito</th>
+                            <th>Símbolo</th>
+                            <th>Línea</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for token in results %}
+                            <tr>
+                                <td>{{ token.value }}</td>
+                                <td>{{ token.antónimo }}</td>
+                                <td>{{ token.dígito }}</td>
+                                <td>{{ token.símbolo }}</td>
+                                <td>{{ token.line }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

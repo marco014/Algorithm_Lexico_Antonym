@@ -1,0 +1,85 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Color de fondo oscuro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ff4500; /* Color de texto neón rojo-naranja */
+}
+
+h1, h2 {
+    text-align: center;
+    color: #ff4500; /* Asegurándonos que los títulos también usen el color neón */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Cambiado a columna para una mejor respuesta */
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #222; /* Fondo oscuro para la caja contenedora */
+    box-shadow: 0 4px 8px rgba(255, 69, 0, 0.5); /* Sombra neón */
+}
+
+form {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ff4500; /* Borde neón */
+    background-color: #333; /* Fondo oscuro para el textarea */
+    color: #fff; /* Texto claro */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados para el textarea */
+}
+
+.table-container {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    background-color: #333; /* Fondo oscuro para la tabla */
+    border: 2px solid #ff4500; /* Borde exterior neón */
+    border-radius: 8px; /* Bordes redondeados para la tabla */
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #ff4500; /* Bordes neón para las celdas */
+    text-align: left;
+    font-size: 16px;
+}
+
+table th {
+    background-color: #444; /* Fondo oscuro para las cabeceras */
+}
+
+table tr:nth-child(even) {
+    background-color: #383838; /* Fondo alternativo para las filas */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #ff4500; /* Fondo neón para el botón */
+    color: #fff;
+    border: none;
+    border-radius: 8px; /* Bordes redondeados para el botón */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #ff6347; /* Un neón más claro para el hover */
+}
